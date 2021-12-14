@@ -53,11 +53,19 @@
     <UnityVersion>2020.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Free Pixel Art Forest\Demo\MoveBackground.cs" />
+    <Compile Include="Assets\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\PlayerMovment.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Door.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Sprites\Caracter\License.txt" />
+    <None Include="Assets\Sprites\Cainos\Pixel Art Platformer - Village Props\Changelog.txt" />
+    <None Include="Assets\Free Pixel Art Forest\Contact.txt" />
+    <None Include="Assets\Free Pixel Art Forest\Lisense.txt" />
     <None Include="Assets\Sprites\Caracter\Contact.txt" />
+    <None Include="Assets\Free Pixel Art Forest\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
