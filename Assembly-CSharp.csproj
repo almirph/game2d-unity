@@ -53,19 +53,25 @@
     <UnityVersion>2020.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Free Pixel Art Forest\Demo\MoveBackground.cs" />
-    <Compile Include="Assets\Scripts\PlayerAttack.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovment.cs" />
-    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Sprites\Free Pixel Art Forest\Demo\MoveBackground.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyPatrol.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\Enemy_Sideways.cs" />
+    <Compile Include="Assets\Scripts\Health\Health.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovment.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Slime.cs" />
+    <Compile Include="Assets\Scripts\Health\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\Health\HealthCollectable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Sprites\Caracter\License.txt" />
     <None Include="Assets\Sprites\Cainos\Pixel Art Platformer - Village Props\Changelog.txt" />
-    <None Include="Assets\Free Pixel Art Forest\Contact.txt" />
-    <None Include="Assets\Free Pixel Art Forest\Lisense.txt" />
+    <None Include="Assets\Sprites\Free Pixel Art Forest\Contact.txt" />
+    <None Include="Assets\Sprites\Free Pixel Art Forest\Lisense.txt" />
     <None Include="Assets\Sprites\Caracter\Contact.txt" />
-    <None Include="Assets\Free Pixel Art Forest\readme.txt" />
+    <None Include="Assets\Sprites\Free Pixel Art Forest\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
