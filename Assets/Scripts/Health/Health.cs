@@ -17,8 +17,11 @@ public class Health : MonoBehaviour
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
     }
-    public void TakeDamage(float _damage)
+    public bool TakeDamage(float _damage)
     {
+        if (dead)
+            return false;
+
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         if (currentHealth > 0)
         {
@@ -36,6 +39,8 @@ public class Health : MonoBehaviour
                 dead = true;
             }
         }
+
+        return true;
     }
 
     public void addHealth(float _value)

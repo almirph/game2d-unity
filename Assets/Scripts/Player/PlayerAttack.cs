@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float range;
 
     [Header("Attack")]
+    [SerializeField] private AudioClip hitSound;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float damage;
 
@@ -47,7 +48,10 @@ public class PlayerAttack : MonoBehaviour
         print(hit.collider != null && hit.collider.gameObject.GetComponent<Health>());
 
         if (hit.collider != null && hit.collider.gameObject.GetComponent<Health>() != null)
-            hit.collider.gameObject.GetComponent<Health>().TakeDamage(damage);
+        {
+            if (hit.collider.gameObject.GetComponent<Health>().TakeDamage(damage))
+                SoundManager.instance.PlaySound(hitSound);
+        }
 
         return hit.collider != null;
     }
