@@ -31,29 +31,33 @@ public class PlayerMovment : MonoBehaviour
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-playerSize, playerSize, playerSize);
 
-        //seta parâmetros de mocimentação
+        //seta parâmetros de movimentação
         anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", isGrounded());
 
-        //jump wall
-        if (wallJumpCooldown > 0.2f)
-        {
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-
-            if (onWall() && !isGrounded())
+        ////jump wall
+        //if (wallJumpCooldown > 0.2f)
+        //{
+            if(!onWall())
             {
-                body.gravityScale = 0;
-                body.velocity = Vector2.zero;
+                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
             }
-            else
-                body.gravityScale = 7;
+           
+
+            //if (onWall() && !isGrounded())
+            //{
+            //    body.gravityScale = 0;
+            //    body.velocity = Vector2.zero;
+            //}
+            //else
+            //    body.gravityScale = 7;
 
             if (Input.GetKey(KeyCode.UpArrow))
                 Jump();
         }
-        else
-            wallJumpCooldown += Time.deltaTime;
-    }
+        //else
+        //    wallJumpCooldown += Time.deltaTime;
+    //}
 
     private void Jump()
     {
@@ -62,22 +66,18 @@ public class PlayerMovment : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, jumpPower);
             anim.SetTrigger("jump");
         }
-        else if (onWall() && !isGrounded())
-        {
-            if (horizontalInput == 0)
-            {
-                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 0);
-                transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x) * playerSize, transform.localScale.y, transform.localScale.z);
-            }
-            else
-                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
+        //else if (onWall() && !isGrounded())
+        //{
+        //    if (horizontalInput == 0)
+        //    {
+        //        body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 0);
+        //        transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x) * playerSize, transform.localScale.y, transform.localScale.z);
+        //    }
+        //    else
+        //        body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
 
-            wallJumpCooldown = 0;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+        //    wallJumpCooldown = 0;
+        //}
     }
 
     private bool isGrounded()
