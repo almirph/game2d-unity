@@ -13,6 +13,8 @@ public class PlayerMovment : MonoBehaviour
     private float wallJumpCooldown;
     private float horizontalInput;
 
+    [SerializeField] private AudioClip jump;
+
     private void Awake()
     {
         //Pega referências de objetos
@@ -34,50 +36,25 @@ public class PlayerMovment : MonoBehaviour
         //seta parâmetros de movimentação
         anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", isGrounded());
-
-        ////jump wall
-        //if (wallJumpCooldown > 0.2f)
-        //{
-            if(!onWall())
-            {
-                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-            }
+        if(!onWall())
+        {
+            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        }
            
 
-            //if (onWall() && !isGrounded())
-            //{
-            //    body.gravityScale = 0;
-            //    body.velocity = Vector2.zero;
-            //}
-            //else
-            //    body.gravityScale = 7;
-
-            if (Input.GetKey(KeyCode.UpArrow))
-                Jump();
+        if (onWall() && !isGrounded())
+        {
+            body.velocity = new Vector2(body.velocity.x, body.velocity.y);
         }
-        //else
-        //    wallJumpCooldown += Time.deltaTime;
-    //}
+
+        if (Input.GetKey(KeyCode.UpArrow) && isGrounded())
+            Jump();
+        }
 
     private void Jump()
     {
-        if (isGrounded())
-        {
-            body.velocity = new Vector2(body.velocity.x, jumpPower);
-            anim.SetTrigger("jump");
-        }
-        //else if (onWall() && !isGrounded())
-        //{
-        //    if (horizontalInput == 0)
-        //    {
-        //        body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 0);
-        //        transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x) * playerSize, transform.localScale.y, transform.localScale.z);
-        //    }
-        //    else
-        //        body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
-
-        //    wallJumpCooldown = 0;
-        //}
+        body.velocity = new Vector2(body.velocity.x, jumpPower);
+        anim.SetTrigger("jump");
     }
 
     private bool isGrounded()

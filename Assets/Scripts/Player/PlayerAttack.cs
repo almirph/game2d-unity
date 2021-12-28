@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private AudioClip hitSound;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float damage;
+    [SerializeField] private AudioClip notHitSound;
 
     [Header("Enemy Layer")]
     [SerializeField] private LayerMask enemyLayer;
@@ -45,12 +46,13 @@ public class PlayerAttack : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * directionX() * colliderDistance,
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z), 0, directionX() > 1 ? Vector2.left : Vector2.right, 0, enemyLayer);
 
-        print(hit.collider != null && hit.collider.gameObject.GetComponent<Health>());
-
-        if (hit.collider != null && hit.collider.gameObject.GetComponent<Health>() != null)
+        if (hit.collider != null && hit.collider.gameObject.GetComponent<Health>() != null && hit.collider.gameObject.GetComponent<Health>().TakeDamage(damage))
         {
-            if (hit.collider.gameObject.GetComponent<Health>().TakeDamage(damage))
-                SoundManager.instance.PlaySound(hitSound);
+            SoundManager.instance.PlaySound(hitSound);
+        }
+        else
+        {
+            SoundManager.instance.PlaySound(notHitSound);
         }
 
         return hit.collider != null;

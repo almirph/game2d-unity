@@ -67,8 +67,4 @@ public class Slime : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float _damage)
-    {
-
-    }
 }
