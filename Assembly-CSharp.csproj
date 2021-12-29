@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F4A32DE7-F6DD-3248-482E-05C85DFF2126}</ProjectGuid>
+    <ProjectGuid>{4DCE3634-083F-E068-2DA0-F5B1C797D128}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,8 +53,10 @@
     <UnityVersion>2020.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\SoundScript.cs" />
     <Compile Include="Assets\Sprites\Free Pixel Art Forest\Demo\MoveBackground.cs" />
     <Compile Include="Assets\Scripts\LoadingManager.cs" />
+    <Compile Include="Assets\Scripts\WallKillAll.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyPatrol.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
@@ -62,11 +64,11 @@
     <Compile Include="Assets\Scripts\Health\Health.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovment.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyFollowerPatrol.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime.cs" />
     <Compile Include="Assets\Scripts\Health\HealthBar.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Health\HealthCollectable.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyFollowerPatrol.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Sprites\Caracter\License.txt" />
