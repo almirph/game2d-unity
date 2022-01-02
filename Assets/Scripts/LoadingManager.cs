@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoadingManager : MonoBehaviour
-{
-    private void Update()
+{ 
+    
+    private void NextScene()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-            SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

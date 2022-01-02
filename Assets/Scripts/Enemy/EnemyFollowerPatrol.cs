@@ -58,7 +58,9 @@ public class EnemyFollowerPatrol : MonoBehaviour
 
         }
 
-        enemy.position = new Vector3(enemy.position.x + direction * followSpeed * 0.001f, enemy.position.y, enemy.position.z);
+        enemy.position = new Vector3(enemy.position.x + direction * followSpeed * Time.deltaTime, enemy.position.y, enemy.position.z);
+
+        print(enemy.position.x);
 
         idleTimer = 0;
         walkTimer = 0;
@@ -113,7 +115,6 @@ public class EnemyFollowerPatrol : MonoBehaviour
             GenerateNewRandomDirection();
             return;
         }
-
         anim.SetBool("mooving", true);
 
         enemy.localScale = new Vector3(Mathf.Abs(initialScale.x) * _direction, initialScale.y, initialScale.z);
