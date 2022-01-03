@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4DCE3634-083F-E068-2DA0-F5B1C797D128}</ProjectGuid>
+    <ProjectGuid>{441C8F14-46F5-6FE2-1A5D-942177243176}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyPatrol.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\Scripts\Enemy\GenericEnemy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Enemy_Sideways.cs" />
     <Compile Include="Assets\Scripts\Health\Health.cs" />
@@ -104,7 +105,6 @@
     <Compile Include="Assets\Scripts\Health\HealthCollectable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\Enemy\GenericEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -802,7 +802,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="TextToTMP.Editor.csproj">
-      <Project>{520580A9-411A-6996-1A4C-F19DEE4EB883}</Project>
+      <Project>{27D1EBA2-DEBA-4B72-7E17-54B9D73CB35C}</Project>
       <Name>TextToTMP.Editor</Name>
     </ProjectReference>
   </ItemGroup>
